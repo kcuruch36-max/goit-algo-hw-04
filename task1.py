@@ -7,7 +7,7 @@ def total_salary(path):
         with open(path, "r", encoding="utf-8") as file:
             for line in file:
                 name, salary = line.strip().split(",")
-                total += int(salary)
+                total += float(salary)
                 count += 1
 
         if count == 0:

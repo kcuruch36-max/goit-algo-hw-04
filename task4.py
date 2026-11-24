@@ -29,17 +29,18 @@ def show_contact(args, contacts):
         return "Contact not found."
 
 def show_all_contacts(contacts):
-    for name, phone in contacts.items():
-        print(name, phone)
+    result = ""
 
+    for name, phone in contacts.items():
+        result += f"{name}: {phone}\n"
+
+    return result
 
 def main():
     contacts = {}
 
     print("Welcome to the assistent bot!")
     
-
-
     while True:
 
         user_input = input("Enter a command: ")
@@ -62,7 +63,7 @@ def main():
             print(show_contact(args, contacts))
 
         elif command == "all":
-            show_all_contacts(contacts)
+            print(show_all_contacts(contacts))
 
         else:
             print("Invalid command.")
